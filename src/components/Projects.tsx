@@ -166,7 +166,7 @@ const Projects = () => {
                     onClick={(e) => e.stopPropagation()}
                   >
                     <Store className="h-4 w-4 mr-2" />
-                    {selectedProject.id === 2 ? 'Visitar Plataforma' : selectedProject.id === 3 ? 'Visitar Sitio' : 'Visitar '}
+                    {selectedProject.id === 2 ? 'Visitar Plataforma' : project.id === 9 ? 'Visitar Sitio' : 'Visitar Tienda'}
                   </a>
                 </Button>
               </div>
