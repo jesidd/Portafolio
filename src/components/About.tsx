@@ -11,6 +11,8 @@ import {
   SiGit, 
   SiGithub, 
   SiNestjs,
+  SiPython,
+  SiPostgresql,
 } from 'react-icons/si';
 import { Button } from '@/components/ui/button';
 
@@ -153,68 +155,68 @@ const About = () => {
             </div>
             
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-              {[
-                { name: 'JavaScript', Icon: SiJavascript, color: '#F7DF1E', bgColor: 'transparent' },
+                {[
+                { name: 'PostgreSQL', Icon: SiPostgresql, color: '#336791', bgColor: 'transparent' },
                 { name: 'HTML5', Icon: SiHtml5, color: '#E34F26', bgColor: 'transparent' },
-                { name: 'CSS3', Icon: SiCss3, color: '#1572B6', bgColor: 'transparent' },
                 { name: 'Tailwind CSS', Icon: SiTailwindcss, color: '#06B6D4', bgColor: 'transparent' },
                 { name: 'Node.js', Icon: SiNodedotjs, color: '#339933', bgColor: 'transparent' },
                 { name: 'React', Icon: SiReact, color: '#61DAFB', bgColor: 'transparent' },
                 { name: 'TypeScript', Icon: SiTypescript, color: '#3178C6', bgColor: 'transparent' },
+                { name: 'Python', Icon: SiPython, color: '#1572B6', bgColor: 'transparent' },
                 { name: 'Git', Icon: SiGit, color: '#F05032', bgColor: 'transparent' },
                 { name: 'GitHub', Icon: SiGithub, color: '#ffffff', bgColor: '#000000' },
                 { name: 'NestJS', Icon: SiNestjs, color: '#E0234E', bgColor: '#000000' },
-              ].map((tech, index) => (
+                ].map((tech, index) => (
                 <motion.div 
                   key={tech.name}
                   className="group flex flex-col items-center space-y-3 w-full"
                   initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
                   whileInView={shouldReduceMotion ? {} : { opacity: 1, y: 0 }}
                   transition={{ 
-                    duration: 0.3,
-                    delay: shouldReduceMotion ? 0 : index * 0.05,
-                    ease: "easeOut"
+                  duration: 0.3,
+                  delay: shouldReduceMotion ? 0 : index * 0.05,
+                  ease: "easeOut"
                   }}
                   viewport={{ once: true, margin: "-50px" }}
                   whileHover={shouldReduceMotion ? {} : { y: -5 }}
                 >
                   <motion.div 
-                    className="relative w-16 h-16 rounded-2xl border border-border/50 backdrop-blur-sm shadow-lg flex items-center justify-center"
-                    style={{
-                      '--tech-color': tech.color,
-                      backgroundColor: tech.bgColor === 'transparent' ? 'rgba(255, 255, 255, 0.05)' : tech.bgColor,
-                      willChange: 'transform', // Optimización para GPU
-                    } as React.CSSProperties}
+                  className="relative w-16 h-16 rounded-2xl border border-border/50 backdrop-blur-sm shadow-lg flex items-center justify-center"
+                  style={{
+                    '--tech-color': tech.color,
+                    backgroundColor: tech.bgColor === 'transparent' ? 'rgba(255, 255, 255, 0.05)' : tech.bgColor,
+                    willChange: 'transform', // Optimización para GPU
+                  } as React.CSSProperties}
+                  whileHover={shouldReduceMotion ? {} : { 
+                    scale: 1.08,
+                    transition: { duration: 0.2, ease: "easeOut" }
+                  }}
+                  >
+                  <motion.div
                     whileHover={shouldReduceMotion ? {} : { 
-                      scale: 1.08,
-                      transition: { duration: 0.2, ease: "easeOut" }
+                    rotate: [0, -5, 5, 0],
+                    scale: 1.1,
+                    transition: { duration: 0.4, ease: "easeOut" }
                     }}
                   >
-                    <motion.div
-                      whileHover={shouldReduceMotion ? {} : { 
-                        rotate: [0, -5, 5, 0],
-                        scale: 1.1,
-                        transition: { duration: 0.4, ease: "easeOut" }
-                      }}
-                    >
-                      <tech.Icon 
-                        className="text-3xl flex-shrink-0" 
-                        style={{ color: tech.color }}
-                      />
-                    </motion.div>
-                    <motion.div 
-                      className="absolute inset-0 rounded-2xl"
-                      style={{ backgroundColor: tech.color }}
-                      initial={{ opacity: 0 }}
-                      whileHover={shouldReduceMotion ? {} : { opacity: 0.15 }}
-                      transition={{ duration: 0.2 }}
+                    <tech.Icon 
+                    className="text-3xl flex-shrink-0" 
+                    style={{ color: tech.color }}
                     />
                   </motion.div>
+                  <motion.div 
+                    className="absolute inset-0 rounded-2xl"
+                    style={{ backgroundColor: tech.color }}
+                    initial={{ opacity: 0 }}
+                    whileHover={shouldReduceMotion ? {} : { opacity: 0.15 }}
+                    transition={{ duration: 0.2 }}
+                  />
+                  </motion.div>
                   <span className="text-sm font-medium text-center transition-colors duration-200 group-hover:text-primary">
-                    {tech.name}
+                  {tech.name}
                   </span>
                 </motion.div>
-              ))}
+                ))}
             </div>
 
           </motion.div>
