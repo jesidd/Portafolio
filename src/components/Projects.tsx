@@ -122,7 +122,7 @@ const Projects = () => {
                       }
                     >
                       <Store className="h-4 w-4 mr-2" />
-                      {project.id === 2 ? 'Visitar Restaurante' : project.id === 9 ? 'Visitar Sitio' : 'Visitar Tienda'}
+                      {project.id === 2 ? 'Visitar Plataforma' : project.id === 9 ? 'Visitar Sitio' : 'Visitar Tienda'}
                     </a>
                   </Button>
                 </div>
