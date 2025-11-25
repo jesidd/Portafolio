@@ -115,14 +115,13 @@ const Projects = () => {
                       rel="noopener noreferrer"
                       aria-label={
                         project.id === 2 
-                          ? `Visitar restaurante ${project.title}` 
-                          : project.id === 3 
-                          ? `Visitar sitio web de ${project.title}`
-                          : `Visitar tienda oficial de ${project.title}`
+                          ? `Visitar Plataforma ${project.title}` 
+                          : 
+                          `Visitar sitio web de ${project.title}`
                       }
                     >
                       <Store className="h-4 w-4 mr-2" />
-                      {project.id === 2 ? 'Visitar Plataforma' : project.id === 9 ? 'Visitar Sitio' : 'Visitar Tienda'}
+                      {project.id === 2 ? 'Visitar Plataforma' :   'Visitar Sitio' }
                     </a>
                   </Button>
                 </div>
@@ -166,7 +165,7 @@ const Projects = () => {
                     onClick={(e) => e.stopPropagation()}
                   >
                     <Store className="h-4 w-4 mr-2" />
-                    {selectedProject.id === 2 ? 'Visitar Plataforma' : project.id === 9 ? 'Visitar Sitio' : 'Visitar Tienda'}
+                    {selectedProject.id === 2 ? 'Visitar Plataforma' : 'Visitar Sitio' }
                   </a>
                 </Button>
               </div>
