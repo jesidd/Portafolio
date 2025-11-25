@@ -1,0 +1,25 @@
+[build]
+builder = "nixpacks"
+
+[deploy]
+startCommand = "pnpm start"
+healthcheckPath = "/"
+healthcheckTimeout = 300
+restartPolicyType = "on_failure"
+
+[env]
+NODE_ENV = "production"
+PORT = "${{PORT}}"
+VITE_SITE_URL = "https://portafolioisaac-production.up.railway.app"
+VITE_FRONTEND_URL = "https://portafolioisaac-production.up.railway.app"
+
+# Métricas y monitoreo
+[monitoring]
+enabled = true
+metrics = ["cpu", "memory", "network", "disk"]
+
+# Configuración de logs
+[logs]
+retention = "7d"
+level = "info"
+

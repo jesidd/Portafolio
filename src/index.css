@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Isaac Sarceño Portfolio Design System - Dark Theme with Purple Accents */
+
+@layer base {
+  :root {
+    /* Base dark background */
+    --background: 240 10% 4%;
+    --foreground: 0 0% 95%;
+
+    /* Card styling with subtle contrast */
+    --card: 240 8% 6%;
+    --card-foreground: 0 0% 95%;
+
+    /* Popover styling */
+    --popover: 240 8% 6%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Primary purple theme */
+    --primary: 258 90% 66%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 258 90% 76%;
+
+    /* Secondary grays */
+    --secondary: 240 5% 15%;
+    --secondary-foreground: 0 0% 90%;
+
+    /* Muted elements */
+    --muted: 240 5% 12%;
+    --muted-foreground: 240 5% 65%;
+
+    /* Accent colors */
+    --accent: 258 90% 66%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Borders and inputs */
+    --border: 240 5% 18%;
+    --input: 240 5% 15%;
+    --ring: 258 90% 66%;
+
+    /* Design system tokens */
+    --radius: 0.75rem;
+    
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(240 8% 6%));
+    --gradient-card: linear-gradient(145deg, hsl(240 8% 7%), hsl(240 5% 5%));
+    
+    /* Shadows with purple glow */
+    --shadow-primary: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+    --shadow-card: 0 4px 20px -2px hsl(0 0% 0% / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.2);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+  
+  html {
+    /* scroll-behavior: smooth; - Removido porque Lenis maneja el scroll suave */
+  }
+
+  /* Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border border-border/50;
+    box-shadow: var(--shadow-card);
+  }
+  
+  .glow-on-hover {
+    transition: var(--transition-smooth);
+  }
+  
+  .glow-on-hover:hover {
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
+  }
+  
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
